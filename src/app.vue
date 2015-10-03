@@ -1,5 +1,7 @@
 <template>
-  <input autofocus v-model="input">
+  <input autofocus placeholder="What do you want to do?" 
+    v-model="input"
+    v-on="keyup:add | key 'enter'">
   <ul>
     <li v-repeat="todo : todos">
       <input type="checkbox" v-model="todo.completed">
@@ -11,8 +13,18 @@
 <script>
 export default {
   data: {
-    todos: [{title: "Learn how to make web apps", completed: true}, {title:"..."}, {title: "Profit!"}],
+    todos: [],
     input: ''
+  },
+
+  methods: {
+    add() {
+      var value = this.input.trim();
+      if (value) {
+        this.todos.push({title: value, completed: false});
+        this.input = '';
+      }
+    }
   }
 };
 </script>
