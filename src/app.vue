@@ -80,4 +80,39 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+input[autofocus] {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  margin: 0px -2px;
+  font-size: 1.5em;
+  border-bottom: 1px solid #555555;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+
+li {
+  border-bottom: 1px solid #B0B0B0;
+  padding: 10px;
+  font-size: 1.2em;
+}
+li input {
+  font-size: 1em;
+  padding: 0px;
+  margin: -2px 3px;
+}
+li a {
+  float: right;
+}
+div {
+  padding: 0 10px;
+}
 </style>
