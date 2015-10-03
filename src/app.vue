@@ -20,6 +20,8 @@
     <a v-on="click: filter = 'all'">All</a>
     <a v-on="click: filter = 'active'">Active</a>
     <a v-on="click: filter = 'completed'">Completed</a>
+    <button v-on="click: clear" 
+            v-show="todos.length > remaining">Clear</button>
   </div>
 </template>
 
@@ -60,6 +62,9 @@ export default {
     },
     remove(todo) {
       this.todos.$remove(todo);
+    },
+    clear() {
+      this.todos = filters.active(this.todos);
     }
   }
 };
