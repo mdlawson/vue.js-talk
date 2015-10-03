@@ -3,7 +3,7 @@
     v-model="input"
     v-on="keyup:add | key 'enter'">
   <ul>
-    <li v-repeat="todo : todos">
+    <li v-repeat="todo : filtered">
       <input type="checkbox" v-model="todo.completed">
       <label v-on="dblclick: todo.editing = true"
              v-show="!todo.editing">{{todo.title}}</label>
@@ -17,18 +17,30 @@
     <strong>
       {{ remaining }} {{ remaining | pluralize 'item' }} remaining
     </strong>
+    <a v-on="click: filter = 'all'">All</a>
+    <a v-on="click: filter = 'active'">Active</a>
+    <a v-on="click: filter = 'completed'">Completed</a>
   </div>
 </template>
 
 <script>
+
+var filters = {
+  all: (todos) => todos,
+  active: (todos) => todos.filter(todo => !todo.completed),
+  completed: (todos) => todos.filter(todo => todo.completed)
+};
+
 export default {
   data: {
     todos: [],
-    input: ''
+    input: '',
+    filter: 'all'
   },
 
   computed: {
-    remaining() { return this.todos.filter(todo => !todo.completed).length; }
+    remaining() { return filters.active(this.todos).length; },
+    filtered() { return filters[this.filter](this.todos); }
   },
 
   methods: {
