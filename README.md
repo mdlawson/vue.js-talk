@@ -1,23 +1,23 @@
 # Vue.js Talk
 
-## [Step 1 - HTML](../../commit/ddc4663e69da8658d274befa4bda46917056ffdd)
+## [Step 1 - HTML](../../commit/e103e959f3f236a9d5513c91d51f7608c1e6d80a)
 
-## [Step 2 - Data](../../commit/76dfb7d1a3e34ff6f801f031c845700abd2929a1)
+## [Step 2 - Data](../../commit/73524267c89efb166e176f801f556cf82b75d129)
 
-## [Step 3 - Templating](../../commit/aa4651996e4dc97b18f759dbf395e67a747235a6)
+## [Step 3 - Templating](../../commit/02a4e4e6dc0aa2c92773c53e4ef6bbcb6d977d2b)
 
-## [Step 4 - Events](../../commit/9192c3cd2253fa86cd5bf2ff1de961f81cd6966a)
+## [Step 4 - Events](../../commit/04399aa885e164a1958f9447daf68bc5a3807275)
 
-## [Step 5  - Removing + Editing](../../commit/486358a541fcca2ec337fc75e82277ba0c262d85)
+## [Step 5  - Removing + Editing](../../commit/222a37e18db6e196f3cad8f91e2f51e79b7dca3b)
 
-## [Step 6 - Computed](../../commit/76002023354f680f1883c499346db5134d0109d2)
+## [Step 6 - Computed](../../commit/44b2a75214fbeb90a9cbdb4b4f0ab2042054a56a)
 
-## [Step 7 - Filtering](../../commit/092ff5416a80ad550cf1b2ff4abdbcb73ee5b61a)
+## [Step 7 - Filtering](../../commit/7620ae959c554318aa99b3da4bafc5aa6e2809cf)
 
-## [Step 8 - Clear](../../commit/fa1eb0061fe16231183f02e94902ed0d08f3c618)
+## [Step 8 - Clear](../../commit/eab0467a41c401eacba32e61ec52f7c70fa70523)
 
-## [Step 9 - Persist](../../commit/ed03acb114abec833e27e00bdbb9683885ffc262)
+## [Step 9 - Persist](../../commit/0a2c31ef859e2e3d66e4430fb50f4273df3491cf)
 
-## [Step 10 - Make it pretty(ish)](../../commit/73d693e273da2754b5ce03f28b44be1a452ae855)
+## [Step 10 - Make it pretty(ish)](../../commit/fd6e5de3fc87eda7f00fb7d3b27b8ee5bdd3c6ab)
 
-## [Step 11 - Components](../../commit/e53f8e30eedd51ef4dea39850f11dba5785bd08e)
+## [Step 11 - Components](../../commit/a6c2093c3f54c77349dfdc39015cec06854306ae)
