@@ -3,15 +3,7 @@
     v-model="input"
     v-on="keyup:add | key 'enter'">
   <ul>
-    <li v-repeat="todo : filtered">
-      <input type="checkbox" v-model="todo.completed">
-      <label v-on="dblclick: todo.editing = true"
-             v-show="!todo.editing">{{todo.title}}</label>
-      <input v-model="todo.title"
-             v-on="blur:save(todo), keyup:save(todo) | key 'enter'"
-             v-show="todo.editing">
-      <a v-on="click:remove(todo)">[x]</a>
-    </li>
+    <todo v-repeat="filtered" on-remove="{{remove}}"/>
   </ul>
   <div v-show="todos.length">
     <strong>
@@ -27,6 +19,7 @@
 
 <script>
 
+var Todo = require('./todo');
 var STORE_KEY = "todos";
 
 var filters = {
@@ -62,19 +55,16 @@ export default {
         this.input = '';
       }
     },
-    save(todo) {
-      todo.editing = false;
-      todo.title = todo.title.trim();
-      if (!todo.title) {
-        this.remove(todo);
-      }
-    },
     remove(todo) {
       this.todos.$remove(todo);
     },
     clear() {
       this.todos = filters.active(this.todos);
     }
+  },
+
+  components: {
+    todo: Todo
   }
 };
 </script>
@@ -97,20 +87,6 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0 0 10px 0;
-}
-
-li {
-  border-bottom: 1px solid #B0B0B0;
-  padding: 10px;
-  font-size: 1.2em;
-}
-li input {
-  font-size: 1em;
-  padding: 0px;
-  margin: -2px 3px;
-}
-li a {
-  float: right;
 }
 div {
   padding: 0 10px;
