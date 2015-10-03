@@ -9,6 +9,12 @@
 </template>
 
 <script>
+export default {
+  data: {
+    todos: [],
+    input: ''
+  }
+};
 </script>
 
 <style>
