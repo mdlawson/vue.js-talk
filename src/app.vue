@@ -5,7 +5,12 @@
   <ul>
     <li v-repeat="todo : todos">
       <input type="checkbox" v-model="todo.completed">
-      <label>{{ todo.title }}</label>
+      <label v-on="dblclick: todo.editing = true"
+             v-show="!todo.editing">{{todo.title}}</label>
+      <input v-model="todo.title"
+             v-on="blur:save(todo), keyup:save(todo) | key 'enter'"
+             v-show="todo.editing">
+      <a v-on="click:remove(todo)">[x]</a>
     </li>
   </ul>
 </template>
@@ -21,9 +26,19 @@ export default {
     add() {
       var value = this.input.trim();
       if (value) {
-        this.todos.push({title: value, completed: false});
+        this.todos.push({title: value, completed: false, editing: false});
         this.input = '';
       }
+    },
+    save(todo) {
+      todo.editing = false;
+      todo.title = todo.title.trim();
+      if (!todo.title) {
+        this.remove(todo);
+      }
+    },
+    remove(todo) {
+      this.todos.$remove(todo);
     }
   }
 };
