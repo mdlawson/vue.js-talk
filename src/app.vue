@@ -27,6 +27,8 @@
 
 <script>
 
+var STORE_KEY = "todos";
+
 var filters = {
   all: (todos) => todos,
   active: (todos) => todos.filter(todo => !todo.completed),
@@ -35,9 +37,16 @@ var filters = {
 
 export default {
   data: {
-    todos: [],
+    todos: JSON.parse(localStorage.getItem(STORE_KEY) || '[]'),
     input: '',
     filter: 'all'
+  },
+
+  watch: {
+    todos: {
+      handler: (todos) => localStorage.setItem(STORE_KEY, JSON.stringify(todos)),
+      deep: true
+    }
   },
 
   computed: {
