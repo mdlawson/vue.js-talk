@@ -1,5 +1,12 @@
 # Vue.js Talk
 
+## Installation:
+You'll need nodejs (https://nodejs.org/en/download/) and then do
+`npm install` while in the repo root.
+
+## Running:
+`npm run dev` Will start a dev server on `localhost:8080`
+
 ## [Step 1 - HTML](../../commit/e103e959f3f236a9d5513c91d51f7608c1e6d80a)
 
 ## [Step 2 - Data](../../commit/73524267c89efb166e176f801f556cf82b75d129)
